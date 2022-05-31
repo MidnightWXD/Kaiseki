@@ -1,0 +1,53 @@
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.searchWeather {
+    display: flex;
+    width: 99%;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.card-searchWeather {
+    width: 100%;
+}
+
+/* .searchWeather > * {
+    
+    
+} */
+
+.forecastWeather {
+    display: flex;
+    gap: 1.5em;
+    height: 200px;
+}
+
+.forecastWeather > * {
+    width: 33%;
+    border: 1px solid black;
+    color: antiquewhite;
+    background-color: rgb(8, 8, 56);
+}
+
+.WeatherContainer > * {
+    padding: 5px;
+    margin: 5px;
+}
+    
+.btn-searchHistory {
+    background-color: gray;
+    width: 100%;
+}
