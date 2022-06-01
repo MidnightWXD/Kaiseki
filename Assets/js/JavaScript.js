@@ -102,21 +102,23 @@ function history() {
                 historyContainer.append(historybtn);       
             }
         }    
-        var searchHistorybtn = document.querySelector(".btn-searchHistory");
-        searchHistorybtn.addEventListener("click", function(event) {
-            var city = event.target.innerHTML;
-            console.log(city);
-            var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-            fetch(url)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                var lat = data.coord.lat;
-                var lon = data.coord.lon;
-                var urlForecast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat
-                + "&lon=" + lon + "&exclude=hourly,minutely" +  "&appid=" + APIKey;
-                getWeather(url, urlForecast);
+        var searchHistorybtn = document.querySelectorAll(".btn-searchHistory");
+        searchHistorybtn.forEach(function (button) {
+            button.addEventListener("click", function(event) {
+                var city = event.target.innerHTML;
+                console.log(city);
+                var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+                fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    var lat = data.coord.lat;
+                    var lon = data.coord.lon;
+                    var urlForecast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat
+                    + "&lon=" + lon + "&exclude=hourly,minutely" +  "&appid=" + APIKey;
+                    getWeather(url, urlForecast);
+                })
             })
         })
     }
