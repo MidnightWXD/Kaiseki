@@ -1,3 +1,9 @@
+.jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+}
+
+
 h1 {
     text-align: center;
 }
@@ -57,3 +63,4 @@ label {
     font-size: 20px;
     font-weight: bolder;
 }
+

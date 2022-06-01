@@ -127,22 +127,26 @@ function history() {
 searchBtn.addEventListener("click", function() {
     city = document.querySelector("#city").value;
     //save city to local storage
-    var cityName = JSON.parse(localStorage.getItem("city")) || [];
-    cityName.push(city);
-    localStorage.setItem("city", JSON.stringify(cityName));
-    history();
-    var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-    fetch(url)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        var lat = data.coord.lat;
-        var lon = data.coord.lon;
-        var urlForecast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat
-        + "&lon=" + lon + "&exclude=hourly,minutely" +  "&appid=" + APIKey;
-        getWeather(url, urlForecast);
-    })
+    if(city !== "") {
+        var cityName = JSON.parse(localStorage.getItem("city")) || [];
+        cityName.push(city);
+        localStorage.setItem("city", JSON.stringify(cityName));
+        history();
+        var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+        fetch(url)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            var lat = data.coord.lat;
+            var lon = data.coord.lon;
+            var urlForecast = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat
+            + "&lon=" + lon + "&exclude=hourly,minutely" +  "&appid=" + APIKey;
+            getWeather(url, urlForecast);
+        })
+    }else {
+        alert("Please enter a city");
+    }   
 })
 
 
