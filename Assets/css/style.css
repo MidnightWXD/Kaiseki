@@ -64,3 +64,27 @@ label {
     font-weight: bolder;
 }
 
+.green {
+    background-color: lightgreen;
+    padding: 0 5px;
+}
+
+.yellow {
+    background-color: lightyellow;
+    padding: 0 5px;
+}
+
+.orange {
+    background-color: orange;
+    padding: 0 5px;
+}
+
+.red {
+    background-color: lightcoral;
+    padding: 0 5px;
+}
+
+.purple {
+    background-color: lightpink;
+    padding: 0 5px;
+}

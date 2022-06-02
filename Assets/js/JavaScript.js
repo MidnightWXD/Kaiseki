@@ -33,7 +33,24 @@ function getWeather (url, urlForecast) {
         console.log(data);
         var uvIndex = data.current.uvi;
         var uvIndexEL = document.querySelector(".uvIndex");
-        uvIndexEL.innerHTML = "UV INDEX: " + uvIndex;
+        var uvIndexContainer = document.createElement("a");
+        var uvIndexColor = "";
+        if(uvIndex < 3) {
+            uvIndexColor = "green";
+        } else if (uvIndex < 6) {
+            uvIndexColor = "yellow";
+        } else if (uvIndex < 8) {
+            uvIndexColor = "orange";
+        } else if (uvIndex < 11) {
+            uvIndexColor = "red";
+        } else {
+            uvIndexColor = "purple";
+        }
+        uvIndexEL.innerHTML = "UV INDEX: ";
+        uvIndexEL.append(uvIndexContainer);
+        uvIndexContainer.setAttribute("class", "uvIndexContainer " + uvIndexColor);
+        uvIndexContainer.innerHTML = uvIndex;
+
         for(var i = 1; i < 6; i++) {
             var forecast = data.daily[i];
             var forecastDate = new Date(forecast.dt * 1000);
