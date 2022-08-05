@@ -21,4 +21,4 @@ Each search history is a button which user can click on it to get the weather in
 ![Weather Dashboard](./Assets/images/5.png)
 ![Weather Dashboard](./Assets/images/6.png)
 
-https://midnightwxd.github.io/Kaiseki/
+https://midnightwxd.github.io/Kaiseki-Weather-Dashboard/
